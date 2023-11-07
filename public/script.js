@@ -1,6 +1,6 @@
 const getJSON = async () => {
     try {
-        let response = await fetch("https://assignment13-lwxc.onrender.com");
+        let response = await fetch("/api/vacations").json();
         return await response.json();
     } catch(error) {
         console.log("error retrieving json");
@@ -32,7 +32,7 @@ const getVacationItem = (vacation) => {
     div.appendChild(h2);
 
     let img = document.createElement("img");
-    img.src = "https://assignment13-lwxc.onrender.com" + vacation.img;
+    img.src = vacation.img;
     div.appendChild(img);
 
     let ul = document.createElement("ul");
